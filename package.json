@@ -1,0 +1,18 @@
+{
+  "name": "web-mito-sdk",
+  "version": "1.0.0",
+  "description": "",
+  "source": "src/index.js",
+  "module": "dist/web-mito-sdk.module.js",
+  "unpkg": "dist/web-mito-sdk.umd.js",
+  "main": "dist/web-mito-sdk.js",
+  "scripts": {
+    "build": "microbundle",
+    "dev": "microbundel watch"
+  },
+  "author": "zhaojiale",
+  "license": "ISC",
+  "devDependencies": {
+    "microbundle": "^0.15.1"
+  }
+}

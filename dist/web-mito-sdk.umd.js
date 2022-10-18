@@ -1,0 +1,2 @@
+!function(n){"function"==typeof define&&define.amd?define(n):n()}(function(){new(/*#__PURE__*/function(){function n(n){var e=n.sendApi,o=n.sendResource,r=n.sendJsError;this.name=n.name,this.sendApi=e,this.sendResource=o,this.sendJsError=r}return n.prototype.init=function(){var n;this.sendJsError&&(n=window.onerror,window.onerror=function(e,o,r,i,t){!function(e,o,r,i,t){if(n)try{n.call(e,o,r,i,t)}catch(n){}null!=t&&console.log(t)}(e,o,r,i,t)})},n}())({name:"opcenter",sendJsError:!0}).init()});
+//# sourceMappingURL=web-mito-sdk.umd.js.map
