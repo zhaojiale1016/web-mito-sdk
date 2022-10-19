@@ -8,7 +8,7 @@ export function watchJsError(name) {
     }
     if (error != null) {
       //上报
-      console.log(error);
+      console.log(message, source, lineno, colno, error);
     }
   }
   window.onerror = function (message, source, lineno, colno, error) {

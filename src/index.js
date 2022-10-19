@@ -1,4 +1,6 @@
-import { watchJsError }  from "./module/watchJsError.js";
+import { watchApiError } from "./module/watchApiError.js";
+import { watchJsError } from "./module/watchJsError.js";
+import { watchResourceError } from "./module/watchResourceError.js";
 
 class webMitoSdkInit {
   /*
@@ -10,11 +12,13 @@ class webMitoSdkInit {
   constructor({ name, sendApi, sendResource, sendJsError }) {
     this.name = name;
     this.sendApi = sendApi;
-    this.sendResource = sendResource;
     this.sendJsError = sendJsError;
+    this.sendResource = sendResource;
   }
   init() {
+    this.sendApi && watchApiError(this.name);
     this.sendJsError && watchJsError(this.name);
+    this.sendResource && watchResourceError(this.name);
   }
 }
 
