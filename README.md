@@ -14,7 +14,7 @@ npm install web-mito-sdk || yarn add web-mito-sdk
 ```
  import webMitoSdkInit from "web-mito-sdk";
 
- let webMitoSdkInits = new webMitoSdkInit({
+ const webMitoSdkInits = new webMitoSdkInit({
       name: "opcenter",
       sendApi:true,
       sendJsError: true,

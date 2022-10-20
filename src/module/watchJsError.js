@@ -1,17 +1,23 @@
-export function watchJsError(name) {
-  const onError = window.onerror;
-  function errorHandler(message, source, lineno, colno, error) {
-    if (onError) {
-      try {
-        onError.call(message, source, lineno, colno, error);
-      } catch (err) {}
-    }
-    if (error != null) {
-      //上报
-      console.log(message, source, lineno, colno, error);
-    }
+export function watchJsError(name, type, config) {
+  window.addEventListener(
+    "error",
+    (event) => {
+      if (event.target.localName) {
+        console.log("这是资源错误", event);
+      } else {
+        console.log("这是代码错误", event);
+      }
+    },
+    true
+  );
+  
+  window.addEventListener("unhandledrejection", (event) => {
+    console.log("这是Promise场景中错误", event);
+  });
+
+  if (type == "VUE") {
+    config.errorHandler = function (err, vm, info) {
+      console.log(`Error: ${err.toString()}\nInfo: ${info}`, "vue内部错误");
+    };
   }
-  window.onerror = function (message, source, lineno, colno, error) {
-    errorHandler(message, source, lineno, colno, error);
-  };
 }
