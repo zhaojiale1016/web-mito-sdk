@@ -1,4 +1,5 @@
-import { watchApiError } from "./module/watchApiError.js";
+import { watchApiErrorXhr } from "./module/watchApiErrorXhr.js";
+import { watchApiErrorFetch } from "./module/watchApiErrorFetch.js";
 import { watchJsError } from "./module/watchJsError.js";
 import { watchResourceError } from "./module/watchResourceError.js";
 
@@ -12,8 +13,9 @@ export class webMitoSdkInit {
     this.sendResource = sendResource;
   }
   init() {
-    this.sendApi && watchApiError(this.name);
-    this.sendJsError && watchJsError(this.name, this.type,this.config);
-    // this.sendResource && watchResourceError(this.name);
+    this.sendApi && watchApiErrorXhr(this.name);
+    this.sendApi && watchApiErrorFetch(this.name);
+    this.sendJsError && watchJsError(this.name, this.type, this.config);
+    this.sendResource && watchResourceError(this.name);
   }
 }
