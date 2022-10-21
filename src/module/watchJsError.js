@@ -15,7 +15,7 @@ export function watchJsError(name, type, config) {
 
   if (type == "VUE") {
     config.errorHandler = function (err, vm, info) {
-      console.log(`Error: ${err.toString()}\nInfo: ${info}`, "vue内部错误");
+      console.log(vm.$options.propsData, "vue内部错误");
     };
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "web-mito-sdk",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "",
   "source": "src/index.js",
   "module": "dist/web-mito-sdk.module.js",
